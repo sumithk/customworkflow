@@ -1,5 +1,5 @@
 import {add} from './index';
 
-test('1 + 1 to equal 2', () => {
-  expect(add(1,1)).toBe(2);
+test('4 + 4 to equal 8', () => {
+  expect(add(4,4)).toBe(8);
 });

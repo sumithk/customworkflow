@@ -12,7 +12,8 @@
     "scripts": {
         "open": "node tools/server.js",
         "test": "jest --ci",
-        "start": "npm-run-all --parallel open test"
+        "dev-test": "jest --watchAll",
+        "start": "npm-run-all --parallel open dev-test"
     },
     "author": "Nikhil",
     "license": "MIT",
