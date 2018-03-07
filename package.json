@@ -11,7 +11,7 @@
     },
     "scripts": {
         "open": "node tools/server.js",
-        "test": "jest --watchAll",
+        "test": "jest --ci",
         "start": "npm-run-all --parallel open test"
     },
     "author": "Nikhil",
