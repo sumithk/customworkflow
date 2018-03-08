@@ -4,7 +4,11 @@
     "description": "Demo",
     "main": "index.js",
     "devDependencies": {
-        "eslint-config-recommended": "^2.0.0"
+        "babel-preset-react": "^6.24.1",
+        "css-loader": "^0.28.10",
+        "eslint-config-recommended": "^2.0.0",
+        "eslint-plugin-react": "^7.7.0",
+        "style-loader": "^0.20.2"
     },
     "directories": {
         "test": "test"
@@ -27,16 +31,22 @@
         "jest": "22.4.2",
         "npm-run-all": "4.1.2",
         "open": "0.0.5",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
         "webpack": "4.1.0",
         "webpack-dev-middleware": "3.0.0",
         "webpack-hot-middleware": "2.21.2"
     },
     "babel": {
-        "presets": ["env"]
+        "presets": [
+            "env",
+            "react"
+        ]
     },
     "eslintConfig": {
         "extends": [
-            "eslint:recommended"
+            "eslint:recommended",
+            "plugin:react/recommended"
         ],
         "parserOptions": {
             "ecmaVersion": 2017,

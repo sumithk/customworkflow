@@ -18,7 +18,8 @@ module.exports = {
   ],
   module: {
     rules: [
-      {test: /\.js$/, exclude: /node_modules/, use: [{ "loader":"babel-loader"}, {"loader":"eslint-loader"}]}
+      {test: /\.js$/, exclude: /node_modules/, use: [{ "loader":"babel-loader"}, {"loader":"eslint-loader"}]},
+      {test: /\.css$/, use: ['style-loader', 'css-loader']}
     ]
   }
 };

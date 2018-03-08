@@ -1,9 +1,6 @@
-const sayHi = () => {
-    console.log('hello world!');
-};
+require('./style.css');
 
-export function add(a, b) {
-    return a + b;
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-sayHi();
+ReactDOM.render(<h1>logins Worlds</h1>, document.getElementById('root'));
