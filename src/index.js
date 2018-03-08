@@ -5,13 +5,9 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 class Square extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {value: null}
-    }
     render() {
         return (
-            <button className="square"  onClick={() => alert('click')}>
+            <button className="square"  onClick={() => this.props.onClick()}>
                 {this.props.value}
             </button>
         )
@@ -19,12 +15,19 @@ class Square extends React.Component {
 }
 
 Square.propTypes = {
-    value: PropTypes.number.isRequired
+    value: PropTypes.number.isRequired,
+    onClick: PropTypes.func
   }
 
 class Board extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+        }
+    }
     renderSquare(i) {
-        return <Square value={i}/>;
+        return <Square value={this.state.squares[i]}/>;
     }
     render() {
         const status = 'Next player: X';
