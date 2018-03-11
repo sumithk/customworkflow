@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
+    <button  className="square" onClick={props.onClick}>
       {props.value}
     </button>
   );
@@ -21,29 +21,27 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
+        key={i}
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
       />
     );
   }
   render() {
+    let rows = [];
+    let cells = [];
+    let cellNumber =0;
+    for(let outerLoop=0;outerLoop<3;outerLoop++){
+      for(let innerLoop=0;innerLoop<3;innerLoop++){
+        cells.push(this.renderSquare(cellNumber));
+        cellNumber++;
+      }
+      rows.push(<div key={outerLoop+cellNumber} className="board-row">{cells}</div>)
+      cells = [];
+    }
     return (
       <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        {rows}
       </div>
     );
   }
