@@ -6,8 +6,12 @@
     "devDependencies": {
         "babel-preset-react": "^6.24.1",
         "css-loader": "^0.28.10",
+        "eslint-config-prettier": "^2.9.0",
         "eslint-config-recommended": "^2.0.0",
+        "eslint-plugin-prettier": "^2.6.0",
         "eslint-plugin-react": "^7.7.0",
+        "onchange": "^3.3.0",
+        "prettier": "1.11.1",
         "style-loader": "^0.20.2"
     },
     "directories": {
@@ -17,7 +21,8 @@
         "open": "node tools/server.js",
         "test": "jest --ci",
         "dev-test": "jest --watchAll",
-        "start": "npm-run-all --parallel open dev-test"
+        "prettier-watch": "onchange '**/*.js' -- prettier --write {{changed}}",
+        "start": "npm-run-all --parallel open dev-test prettier-watch"
     },
     "author": "Nikhil",
     "license": "MIT",
@@ -46,7 +51,9 @@
     },
     "eslintConfig": {
         "extends": [
+            "plugin:prettier/recommended",
             "eslint:recommended",
+            "prettier/react",
             "plugin:react/recommended"
         ],
         "parserOptions": {
@@ -59,7 +66,8 @@
         },
         "rules": {
             "no-console": "off",
-            "no-debugger": "warn"
+            "no-debugger": "warn",
+            "prettier/prettier": "error"
         }
     }
 }
