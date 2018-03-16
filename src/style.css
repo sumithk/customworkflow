@@ -1,51 +1,399 @@
+/*----------- Color Pallete -----------*/
 body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+	font-family: 'ProximaNova-Regular';
+}
+/*-- Green --*/
+.text-primary {
+	color: #84c225;
 }
 
-ol,
-ul {
-    padding-left: 30px;
+/*-- Gray --*/
+.text-dark {
+	color: #444;
 }
 
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
+.text-meduim {
+	color: #666;
 }
 
-.status {
-    margin-bottom: 10px;
+.text-light {
+	color: #979797;
 }
 
-.square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
+/*-- Red --*/
+.text-danger {
+	color: #da251d;
 }
 
-.square:focus {
-    outline: none;
+/*-- Orange --*/
+.text-warning {
+	color: #f2aa00;
+}
+.txt-bold {
+	font-family: 'ProximaNova-Semibold';
+}
+.text-left {
+	text-align: left;
 }
 
-.kbd-navigation .square:focus {
-    background: #ddd;
+.text-blue {
+	color: #458ef5;
+}
+.text-center {
+	text-align: center;
+}
+.text-small {
+	font-size: 12px;
+}
+.text-medium {
+	font-size: 14px;
+}
+.text-large {
+	font-size: 16px;
+}
+/*----------- Color Pallete -----------*/
+.container {
+
+	background: #f7f7f7;
+}
+.header {
+	max-width: 1200px;
+	margin:0 auto;
+	padding:12px;
+	font-size: 14px;
+	display: grid;
+	grid-template-columns: 60% 10% 10% 10% 10%;
+	align-items: center;
+}
+.header .ty-icon {
+	display: block;
+}
+.footer {
+	color: #4a4a4a;
+	font-size: 14px;
+	border-top: 1px solid #dfdfdf;
+	height: 148px;
 }
 
-.game {
-    display: flex;
-    flex-direction: row;
+body {
+	margin:0;
 }
 
-.game-info {
-    margin-left: 20px;
+/*----------- Success Animated Icon -----------*/
+@-webkit-keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
+
+@keyframes scaleAnimation {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@-webkit-keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 151px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drawCircle {
+  0% {
+    stroke-dashoffset: 151px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 36px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes drawCheck {
+  0% {
+    stroke-dashoffset: 36px;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#successAnimationCircle {
+  stroke-dasharray: 151px 151px;
+  stroke: #84c225;
+}
+
+#successAnimationCheck {
+  stroke-dasharray: 36px 36px;
+  stroke: #84c225;
+}
+
+#successAnimationResult {
+  fill: #84c225;
+  opacity: 0;
+}
+
+#successAnimation.animated {
+  -webkit-animation: 1s ease-out 0s 1 both scaleAnimation;
+          animation: 1s ease-out 0s 1 both scaleAnimation;
+}
+#successAnimation.animated #successAnimationCircle {
+  -webkit-animation: 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
+          animation: 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCircle, 0.3s linear 0.9s 1 both fadeOut;
+}
+#successAnimation.animated #successAnimationCheck {
+  -webkit-animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
+          animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both drawCheck, 0.3s linear 0.9s 1 both fadeOut;
+}
+#successAnimation.animated #successAnimationResult {
+  -webkit-animation: 2s linear 0.9s both fadeIn;
+          animation: 2s linear 0.9s both fadeIn;
+}
+/*----------- Success Animated Icon -----------*/
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.fl-rt {
+	float: right;
+}
+.content {
+	background: #fff;
+	width: 660px;
+	margin: 0 auto;
+	text-align: center;
+  padding: 15px 0;
+}
+.content textarea {
+	width: 430px;
+	padding: 5px;
+}
+.feedback-form {
+	width: 450px;
+	margin: 0 auto;
+}
+.star {
+	margin:0 3px;
+}
+
+.pannel {
+	background: #f7f7f7;
+	padding: 15px 20px;
+}
+
+.btn-default {
+	border: 1px solid #dedede;
+	background: #fff;
+	color: #666;
+}
+.btn-primary {
+	border: 1px solid #84c225;
+	background: #84c225;
+	color: #fff;
+	padding:16px;
+}
+.btn-ripple-submit {
+	margin: 5px auto;
+	width: 100%;
+}
+
+.form-control {
+	border: 1px solid #979797;
+	border-radius: 3px;
+	font-size: 16px;
+	font-family: 'ProximaNova-Regular';
+}
+:focus{
+	outline:none !important;
+}
+.btn {
+	font-size: 16px;
+	padding: 7px 19px 3px 19px;
+	border-radius: 3px;
+  font-family: 'ProximaNova-Regular';
+}
+.btn-ripple { margin: 5px; }
+.btn-secondary {
+	background: #666;
+	border:1px solid #666;
+	color:#fff;
+}
+.rating-txt {
+	vertical-align: super;
+	margin-right: 10px;
+}
+.grid-container1 {
+  display: grid;
+  grid-template-columns: auto;
+}
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+	align-items: center;
+}
+.grid-container3 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-container4 {
+  display: grid;
+  grid-template-columns: 180px 80px auto 100px;
+  padding: 10px;
+}
+.grid-item {
+  padding: 5px;
+}
+.pannel-item {
+	background: #fff;
+	border: solid 1px #eeeeee;
+	margin-bottom: 5px;
+}
+.deliveryinfo {
+	font-size:  14px;
+	margin-bottom: 15px;
+}
+.deliveryinfo .title {
+	color: #979797;
+	border-right: 1px solid #eee;
+	text-align: left;
+	font-family: 'ProximaNova-Semibold';
+}
+.deliveryinfo .address {
+	color: #444;
+	text-align: left;
+	font-size: 13px;
+}
+.shipmentinfo {
+	align-items: center;
+}
+.shipmentinfo .ty-icon,
+.deliveryinfo .ty-icon {
+	margin-right: 10px;
+}
+.shipmentinfo .shipment {
+	font-size: 12px;
+	text-align: left;
+	color: #666;
+}
+.shipmentinfo .items {
+	font-size: 13px;
+	color: #444;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+.shipmentinfo .slot {
+	font-size: 13px;
+	color: #666;
+}
+.shipmentinfo .price {
+	font-size: 14px;
+	color: #444;
+}
+.orderinfo {
+	align-items: end;
+	padding:0;
+}
+.orderinfo div div {
+	margin: 5px 0;
+}
+.orderinfo .voucherinfo {
+	font-size: 12px;
+	color:#444;
+	padding:0;
+	text-align: left;
+}
+.orderinfo .paymentinfo {
+	text-align: right;
+	font-size: 12px;
+	padding:0;
+	color:#444;
+}
+.orderinfo .paymentinfo table {
+	float: right;
+}
+.card {
+	width: 195px;
+  background: #fff;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+}
+.card p {
+	font-size: 12px;
+	margin: 5px;
+}
+#assistance .ty-icon:before {
+	vertical-align: bottom;
+  margin-right: 10px;
+	font-size: 9px;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }

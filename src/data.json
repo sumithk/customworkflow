@@ -1,0 +1,29 @@
+{
+    "address": "No:33,Flat No:006,Arrcons Agna IndraprastaShamanna Lane,Church roadMurugeshpalya Bangalore-560017",
+	"orders": [{
+		"order_id": "33666609",
+		"express_shipment_icon": "van.png",
+		"voucher": "",
+		"slot_time": "16 Mar, Friday 07:00 AM - 09:30 AM",
+		"order_value": "48.00",
+		"is_express": false,
+		"order_type": "Normal",
+		"item_count": 1,
+		"payment_method": "Cash On Delivery",
+		"order_status": "Order Placed",
+		"view_invoice": "/order/A-BBO-33666609-150318/invoice/",
+		"order_number": "A-BBO-33666609-150318"
+	}],
+	"orders_details": {
+		"is_voucher_applied": false,
+		"payment_status": "Pay on delivery",
+		"payment_status_msg": {
+			"msg": "",
+			"msg_formatted_values": []
+		},
+		"shop_more": true,
+		"order_amount": "48.00",
+		"total_savings": "0.00",
+		"voucher_msg": ""
+	}
+}
